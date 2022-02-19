@@ -23,7 +23,7 @@ namespace Friendly.Blazor.Inside.CopyDataProtocol
 
 			var src = ((dynamic)wedbDriver).ExecuteScript(@"
 var arg = arguments[0];
-return DotNet.invokeMethod(""BlazorApp"", ""ExecuteFriendly"", arg);
+return DotNet.invokeMethod(""Friendly.Blazor"", ""ExecuteFriendly"", arg);
 ", arg);
 			string aaa = src.ToString();
 		//	Debug.WriteLine(aaa);
@@ -47,7 +47,7 @@ return DotNet.invokeMethod(""BlazorApp"", ""ExecuteFriendly"", arg);
 
 			var src = ((dynamic)wedbDriver).ExecuteScript(@"
 var arg = arguments[0];
-return DotNet.invokeMethod(""BlazorApp"", ""ExecuteFriendly"", arg);
+return DotNet.invokeMethod(""Friendly.Blazor"", ""ExecuteFriendly"", arg);
 ", arg);
 			string aaa = src.ToString();
 			Debug.WriteLine(aaa);

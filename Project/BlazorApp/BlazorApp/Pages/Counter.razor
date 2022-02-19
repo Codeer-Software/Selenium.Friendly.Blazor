@@ -1,7 +1,5 @@
 ﻿@page "/counter"
 @using System.Reflection
-@using Friendly.Blazor.DotNetExecutor
-@using Friendly.Blazor.Inside
 
 <PageTitle>Counter</PageTitle>
 
@@ -13,7 +11,6 @@
 
 @code {
     private int currentCount;
-    public int AAA { get; set; }
     static object? _this;
 
     protected override Task OnInitializedAsync()
@@ -25,13 +22,5 @@
     private void IncrementCount()
     {
         currentCount++;
-    }
-    
-    static DotNetFriendlyControl _ctrl = new DotNetFriendlyControl();
-
-    [JSInvokable]
-    public static string ExecuteFriendly(string x)
-    {
-        return _ctrl.Execute(x);
     }
 }
