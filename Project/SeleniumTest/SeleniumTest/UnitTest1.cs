@@ -8,23 +8,23 @@ namespace SeleniumTest
 {
     public class Tests
     {
-        ChromeDriver? _driver;
+        ChromeDriver? driver;
 
         [SetUp]
-        public void Setup() => _driver = new ChromeDriver();
+        public void Setup() => driver = new ChromeDriver();
 
         [TearDown]
-        public void TearDown()=>_driver?.Dispose();
+        public void TearDown()=>driver?.Dispose();
 
         [Test]
         public void Counter()
         {
-            _driver!.Url = "https://localhost:7128/counter";
+            driver!.Url = "https://localhost:7128/counter";
 
             //wait for loading.
-            while (_driver.Title != "Counter") Thread.Sleep(100);
+            while (driver.Title != "Counter") Thread.Sleep(100);
 
-            var app = new BlazorAppFriend(_driver);
+            var app = new BlazorAppFriend(driver);
 
             //get Component
             var counter = app.FindComponentByType("BlazorApp.Pages.Counter");
@@ -37,12 +37,12 @@ namespace SeleniumTest
         [Test]
         public void FetchData()
         {
-            _driver!.Url = "https://localhost:7128/fetchdata";
+            driver!.Url = "https://localhost:7128/fetchdata";
 
             //wait for loading.
-            while (_driver.Title != "Weather forecast") Thread.Sleep(100);
+            while (driver.Title != "Weather forecast") Thread.Sleep(100);
 
-            var app = new BlazorAppFriend(_driver);
+            var app = new BlazorAppFriend(driver);
 
             //get Component
             var fetchData = app.FindComponentByType("BlazorApp.Pages.FetchData");
@@ -52,7 +52,7 @@ namespace SeleniumTest
             forecasts[0] = app.Type("BlazorApp.Pages.FetchData+WeatherForecast")();
             forecasts[0].Date = DateTime.Now;
             forecasts[0].TemperatureC = 3;
-            forecasts[0].Summary = "ABC";
+            forecasts[0].Summary = "Friendly!";
 
             //set
             fetchData.forecasts = forecasts;
