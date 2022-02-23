@@ -32,7 +32,9 @@ namespace SeleniumTest
             var sample2 = app.Type("BlazorApp.Sample1").Sample2;
             sample2.Value = 100;
 
-            var counter = app.Type("BlazorApp.Pages.Counter")._this;
+            var counter = app.FindComponentByType("BlazorApp.Pages.Counter");
+
+           // var counter = app.Type("BlazorApp.Pages.Counter")._this;
 
             var x = ((AppVar)counter).IsNull;
 

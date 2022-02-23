@@ -19,9 +19,12 @@ namespace Friendly.Blazor
 
             //リソース初期化
             ResourcesLocal.Install(this);
-		}
+        }
 
-		~BlazorAppFriend()
+        public dynamic FindComponentByType(string typeFullName)
+            => this.Type<BlazorController>().FindComponentByType(typeFullName);
+
+        ~BlazorAppFriend()
 		{
 			Dispose(false);
 		}

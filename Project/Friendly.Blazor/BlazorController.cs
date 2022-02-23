@@ -4,8 +4,23 @@ using System.Reflection;
 
 namespace Friendly.Blazor
 {
-    public static class BlazorController
+    public class BlazorController
     {
+        static ComponentBase _app;
+
+        public static void Initialize(ComponentBase app)
+        {
+            _app = app;
+            JSInterface.FriendlyAccessEnabled = true;
+        }
+
+        public static ComponentBase FindComponentByType(string typeFullName)
+        { 
+            var list = new List<ComponentBase>();
+            GetDescendants(_app, list);
+            return list.Where(x => x.GetType().FullName == typeFullName).FirstOrDefault();
+        }
+
         public static List<ComponentBase> GetDescendants(ComponentBase parent, List<ComponentBase> list)
         {
             list.Add(parent);

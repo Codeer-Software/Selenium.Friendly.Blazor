@@ -10,19 +10,9 @@
 
 @code {
     private int currentCount;
-    static object? _this;
-
-    protected override Task OnInitializedAsync()
-    {
-        _this = this;
-        return base.OnInitializedAsync();
-    }
 
     private void IncrementCount()
     {
-        List<ComponentBase> list = new List<ComponentBase>();
-        BlazorController.GetDescendants(App.This, list);
-
         currentCount++;
     }
 }

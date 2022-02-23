@@ -7,7 +7,7 @@ namespace Friendly.Blazor
     {
         static DotNetFriendlyControl _ctrl = new DotNetFriendlyControl();
 
-        public static bool FriendlyAccessEnabled { get; set; }
+        internal static bool FriendlyAccessEnabled { get; set; }
 
         [JSInvokable]
         public static string ExecuteFriendly(string x)
