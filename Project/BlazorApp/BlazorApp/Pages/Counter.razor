@@ -1,6 +1,5 @@
 ﻿@page "/counter"
-@using System.Reflection
-
+@using Friendly.Blazor
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
@@ -21,6 +20,9 @@
 
     private void IncrementCount()
     {
+        List<ComponentBase> list = new List<ComponentBase>();
+        BlazorController.GetDescendants(App.This, list);
+
         currentCount++;
     }
 }

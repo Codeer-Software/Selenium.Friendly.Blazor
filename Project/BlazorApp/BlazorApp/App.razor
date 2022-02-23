@@ -10,3 +10,21 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+    public static App? This { get; set; }
+    protected override void OnInitialized()
+    {
+        This = this;
+
+        var type = this.GetType();
+        var list = new List<Type>();
+        while(type != null)
+        {
+            list.Add(type);
+            type = type.BaseType;
+        }
+
+        base.OnInitialized();
+    }
+}

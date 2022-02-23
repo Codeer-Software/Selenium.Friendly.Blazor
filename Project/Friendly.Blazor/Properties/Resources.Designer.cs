@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace Friendly.Blazor.Properties {
-    using System;
+    using global::System;
     
     
     /// <summary>
