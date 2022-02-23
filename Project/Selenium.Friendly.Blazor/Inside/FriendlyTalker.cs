@@ -2,8 +2,8 @@
 using System.Threading;
 using System.Collections.Generic;
 using Friendly.Blazor.Inside.Protocol;
-using Friendly.Blazor.Properties;
 using System.Globalization;
+using Selenium.Friendly.Blazor.Properties;
 
 namespace Friendly.Blazor.Inside
 {

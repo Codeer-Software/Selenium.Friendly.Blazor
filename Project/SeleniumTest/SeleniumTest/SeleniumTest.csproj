@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Friendly.Blazor\Friendly.Blazor.csproj" />
+    <ProjectReference Include="..\..\Selenium.Friendly.Blazor\Selenium.Friendly.Blazor.csproj" />
   </ItemGroup>
 
 </Project>

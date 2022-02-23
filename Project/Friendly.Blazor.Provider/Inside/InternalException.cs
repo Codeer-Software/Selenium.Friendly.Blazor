@@ -1,7 +1,4 @@
-﻿using System;
-using Friendly.Blazor.Properties;
-using System.Security.Permissions;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace Friendly.Blazor.Inside
 {
