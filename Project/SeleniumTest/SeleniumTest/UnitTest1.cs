@@ -1,5 +1,5 @@
-using Friendly.Blazor;
-using Friendly.Blazor.Inside.Protocol;
+using Selenium.Friendly.Blazor;
+using Selenium.Friendly.Blazor.Inside.Protocol;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
