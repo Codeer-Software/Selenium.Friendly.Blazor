@@ -7,13 +7,8 @@ namespace Selenium.Friendly.Blazor
     {
         static DotNetFriendlyControl _ctrl = new DotNetFriendlyControl();
 
-        internal static bool FriendlyAccessEnabled { get; set; }
-
         [JSInvokable]
         public static string ExecuteFriendly(string x)
-        {
-            if (!FriendlyAccessEnabled) throw new NotSupportedException();
-            return _ctrl.Execute(x);
-        }
+            => _ctrl.Execute(x);
     }
 }

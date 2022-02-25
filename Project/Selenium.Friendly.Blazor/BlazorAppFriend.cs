@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Selenium.Friendly.Blazor.Inside;
+﻿using Selenium.Friendly.Blazor.Inside;
 using Selenium.Friendly.Blazor.Inside.Protocol;
 
 namespace Selenium.Friendly.Blazor
@@ -14,6 +13,9 @@ namespace Selenium.Friendly.Blazor
         public BlazorAppFriend(object webDriver)
 		{
             ResourcesLocal.Initialize();
+
+            //アセンブリ読み込み
+            ((dynamic)webDriver).ExecuteScript("BINDING.assembly_load('Selenium.Friendly.Blazor');");
 
             _connector = new FriendlyConnectorCore(webDriver);
 
