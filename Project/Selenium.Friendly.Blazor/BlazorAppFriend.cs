@@ -12,14 +12,13 @@ namespace Selenium.Friendly.Blazor
 
         public BlazorAppFriend(object webDriver)
 		{
-            ResourcesLocal.Initialize();
-
             //アセンブリ読み込み
             ((dynamic)webDriver).ExecuteScript("BINDING.assembly_load('Selenium.Friendly.Blazor');");
 
             _connector = new FriendlyConnectorCore(webDriver);
 
             //リソース初期化
+            ResourcesLocal.Initialize();
             ResourcesLocal.Install(this);
         }
 
