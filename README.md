@@ -43,7 +43,7 @@ Refer here for details on how to operate Friendly.
 https://github.com/Codeer-Software/Friendly
 
 
-```razor  
+```cs
 using Selenium.Friendly.Blazor;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
