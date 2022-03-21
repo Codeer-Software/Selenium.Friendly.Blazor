@@ -15,27 +15,24 @@ Install Selenium.Friendly.Blazor from NuGet
 https://www.nuget.org/packages/Selenium.Friendly.Blazor/
 
 
-## Must also be used in the product code
+## You also need to install the product code
 
-```razor  
-<Router AppAssembly="@typeof(App).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
-    </Found>
-    <NotFound>
-        <PageTitle>Not found</PageTitle>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+```csproj
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
-@code {
-    protected override void OnInitialized()
-        // It can be operated from the outside by calling this method.
-        => Selenium.Friendly.Blazor.BlazorController.Initialize(this);
-}
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.1" PrivateAssets="all" />
+    <PackageReference Include="Selenium.Friendly.Blazor" Version="0.4.0" />
+  </ItemGroup>
+
+</Project>
 ```
 
 ## Test code using Selenium
